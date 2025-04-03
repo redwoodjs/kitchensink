@@ -10,7 +10,6 @@ export { SessionDurableObject } from "./session/durableObject";
 import { realtimeRoute } from "@redwoodjs/sdk/realtime/worker";
 export { RealtimeDurableObject } from "@redwoodjs/sdk/realtime/durableObject";
 
-
 export type AppContext = {
   // session: Session | null;
   // user: User | null;
@@ -19,9 +18,10 @@ export type AppContext = {
 import { Document as RealtimeDocument } from "@/app/realtime/Document";
 
 import { Document as ResponseDocument } from "@/app/response/Document";
+import { ReactionPage } from "@/app/realtime/pages/ReactionPage";
 
 export default defineApp<AppContext>([
-  setCommonHeaders(),
+  // setCommonHeaders(),
   async ({ env, appContext, request, headers }) => {
     await setupDb(env);
   },
@@ -37,9 +37,7 @@ export default defineApp<AppContext>([
     );
   }),
 
-  render(RealtimeDocument, [
-    prefix("/realtime", [route("/", () => <div>Hello, Realtime World!</div>)]),
-  ]),
+  render(RealtimeDocument, [prefix("/realtime", [route("/", ReactionPage)])]),
 
   // Request/ Response
   render(ResponseDocument, [
@@ -47,6 +45,3 @@ export default defineApp<AppContext>([
     prefix("/request", [route("/", () => <div>Hello, Request World!</div>)]),
   ]),
 ]);
-
-
-
