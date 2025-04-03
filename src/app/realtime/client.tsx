@@ -1,6 +1,6 @@
 import { initRealtimeClient } from "@redwoodjs/sdk/realtime/client";
 
 initRealtimeClient({
-    key: window.location.pathname,
+  key: "redwood-realtime-client-key",
 });
-console.log("Realtime Client Initialized.")
+console.log("Realtime Client Initialized.");

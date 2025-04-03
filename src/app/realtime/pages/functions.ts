@@ -1,7 +1,13 @@
 "use server";
 
-export let EMOJIS = ["🤦‍♂️"];
+export let REACTIONS = ["🤦‍♂️"];
 
-export function appendEmoji(emoji: string) {
-  EMOJIS = [...EMOJIS, emoji];
+export function addReaction(reaction: string) {
+  console.log("appending emoji");
+  REACTIONS = [...REACTIONS, reaction];
+}
+
+export function getReactions() {
+  console.log("returning emojis");
+  return REACTIONS;
 }

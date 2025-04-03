@@ -1,11 +1,11 @@
 import { EmojiPicker } from "./EmojiPicker";
 
-import { EMOJIS } from "./functions";
+import { getReactions } from "./functions";
 
 export function ReactionPage() {
   return (
     <div>
-      {EMOJIS.join(" ")}
+      {getReactions().join(" ")}
       <EmojiPicker />
     </div>
   );

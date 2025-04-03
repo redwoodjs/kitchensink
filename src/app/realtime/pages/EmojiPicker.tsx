@@ -1,13 +1,13 @@
 "use client";
 
-import { appendEmoji } from "./functions";
+import { addReaction } from "./functions";
 
 export function EmojiPicker() {
   return (
     <ol>
-      <li onClick={() => appendEmoji("❤️")}>❤️</li>
-      <li onClick={() => appendEmoji("🔥")}>🔥</li>
-      <li onClick={() => appendEmoji("🦋")}>🦋</li>
+      <li onClick={() => addReaction("❤️")}>❤️</li>
+      <li onClick={() => addReaction("🔥")}>🔥</li>
+      <li onClick={() => addReaction("🦋")}>🦋</li>
     </ol>
   );
 }
