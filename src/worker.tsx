@@ -18,7 +18,8 @@ export type AppContext = {
 import { Document as RealtimeDocument } from "@/app/realtime/Document";
 
 import { Document as ResponseDocument } from "@/app/response/Document";
-import { ReactionPage } from "@/app/realtime/pages/ReactionPage";
+import { ReactionPage } from "@/app/pages/Reaction/ReactionPage";
+import { ReactionAdminPage } from "./app/pages/Reaction/ReactionAdminPage";
 
 export default defineApp<AppContext>([
   // setCommonHeaders(),
@@ -42,6 +43,9 @@ export default defineApp<AppContext>([
   // Request/ Response
   render(ResponseDocument, [
     // Streaming
-    prefix("/request", [route("/", () => <div>Hello, Request World!</div>)]),
+    prefix("/request", [
+      route("/", ReactionPage),
+      route("/admin", ReactionAdminPage),
+    ]),
   ]),
 ]);
