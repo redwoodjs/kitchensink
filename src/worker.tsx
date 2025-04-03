@@ -22,7 +22,6 @@ import { ReactionPage } from "@/app/pages/Reaction/ReactionPage";
 import { ReactionAdminPage } from "./app/pages/Reaction/ReactionAdminPage";
 
 export default defineApp<AppContext>([
-  // setCommonHeaders(),
   async ({ env, appContext, request, headers }) => {
     await setupDb(env);
   },
@@ -38,7 +37,18 @@ export default defineApp<AppContext>([
     );
   }),
 
-  render(RealtimeDocument, [prefix("/realtime", [route("/", ReactionPage)])]),
+  route("/api/", () => {
+    return new Response(JSON.stringify({ api: true }), {
+      headers: { "Content-type": "application/json" },
+    });
+  }),
+
+  render(RealtimeDocument, [
+    prefix("/realtime", [
+      route("/", ReactionPage),
+      route("/admin", ReactionAdminPage),
+    ]),
+  ]),
 
   // Request/ Response
   render(ResponseDocument, [
