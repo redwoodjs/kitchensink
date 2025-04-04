@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+html,
+body {
+  background-color: #f6f4f0;
+  background-image:
+    linear-gradient(rgba(212, 211, 209, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 211, 209, 0.3) 1px, transparent 1px);
+  background-size: 16px 16px;
+  background-position: 0 0;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+}
+
+.float-up {
+  animation: floatUp 1s ease-out forwards;
+}
