@@ -1,9 +1,7 @@
 "use server";
 
-import { RouteOptions } from "@redwoodjs/sdk/router";
-import { setTimeout } from "node:timers/promises";
+import { env } from "cloudflare:workers";
 import { renderRealtimeClients } from "@redwoodjs/sdk/realtime/worker";
-import { AppContext } from "@/worker";
 
 export let REACTIONS = ["🤦‍♂️"];
 
@@ -17,11 +15,11 @@ export function getReactions() {
   return REACTIONS;
 }
 
-export async function resetActions(opts: any) {
+export async function resetActions() {
   REACTIONS = ["🤷‍♂️"];
 
   await renderRealtimeClients({
-    durableObjectNamespace: opts?.env?.REALTIME_DURABLE_OBJECT,
+    durableObjectNamespace: env.REALTIME_DURABLE_OBJECT,
     key: "redwood-realtime-client-key",
   });
 }
