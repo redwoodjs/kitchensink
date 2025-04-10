@@ -18,11 +18,11 @@
     "clean:vite": "rm -rf ./node_modules/.vite",
     "release": "pnpm clean && pnpm generate && pnpm build && wrangler deploy",
     "format": "prettier --write ./src",
-    "generate": "npx prisma generate",
     "migrate:dev": "pnpm generate && wrangler d1 migrations apply DB --local",
     "migrate:prd": "wrangler d1 migrations apply DB --remote",
     "migrate:new": "rw-scripts migrate-new",
     "seed": "pnpm worker:run ./src/scripts/seed.ts",
+    "generate": "rw-scripts ensure-env && wrangler types",
     "check": "pnpm generate && pnpm types",
     "types": "pnpm tsc"
   },
