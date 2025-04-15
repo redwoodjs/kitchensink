@@ -29,7 +29,7 @@ export function EmojiPicker() {
   }, []);
 
   return (
-    <ol className="flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-white/50">
+    <ol className="flex items-center justify-center gap-4 px-4 py-4 rounded-full bg-white/50 relative overflow-visible">
       {emojis.map((emoji, index) => (
         <li
           key={emoji}

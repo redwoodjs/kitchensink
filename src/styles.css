@@ -22,5 +22,5 @@ body {
 }
 
 .float-up {
-  animation: floatUp 1s ease-out forwards;
+  animation: floatUp 3s ease-out forwards;
 }
