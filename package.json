@@ -16,7 +16,7 @@
     "worker:run": "rw-scripts worker-run",
     "clean": "pnpm clean:vite",
     "clean:vite": "rm -rf ./node_modules/.vite",
-    "release": "pnpm clean && pnpm generate && pnpm build && wrangler deploy",
+    "release": "rw-scripts ensure-deploy-env && npm run clean && prisma generate && RWSDK_DEPLOY=1 npm run build && wrangler deploy",
     "format": "prettier --write ./src",
     "migrate:dev": "pnpm generate && wrangler d1 migrations apply DB --local",
     "migrate:prd": "wrangler d1 migrations apply DB --remote",
@@ -29,13 +29,13 @@
   "dependencies": {
     "@prisma/adapter-d1": "^6.4.1",
     "@prisma/client": "^6.4.1",
-    "@redwoodjs/sdk": "0.0.56",
+    "@redwoodjs/sdk": "0.0.61",
     "@simplewebauthn/browser": "^13.1.0",
     "@simplewebauthn/server": "^13.1.1",
     "@tailwindcss/vite": "^4.1.2",
-    "react": "19.0.0-rc-f2df5694-20240916",
-    "react-dom": "19.0.0-rc-f2df5694-20240916",
-    "react-server-dom-webpack": "19.0.0-rc-f2df5694-20240916",
+    "react": "canary",
+    "react-dom": "canary",
+    "react-server-dom-webpack": "canary",
     "tailwindcss": "^4.1.2"
   },
   "devDependencies": {
