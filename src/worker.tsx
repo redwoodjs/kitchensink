@@ -1,5 +1,5 @@
-import { defineApp, ErrorResponse } from "@redwoodjs/sdk/worker";
-import { route, render, prefix } from "@redwoodjs/sdk/router";
+import { defineApp, ErrorResponse } from "rwsdk/worker";
+import { route, render, prefix } from "rwsdk/router";
 import { env } from "cloudflare:workers";
 
 import { setCommonHeaders } from "@/app/headers";
@@ -8,8 +8,8 @@ import { setupDb } from "./db";
 // import type { User } from "@prisma/client";
 export { SessionDurableObject } from "./session/durableObject";
 
-import { realtimeRoute } from "@redwoodjs/sdk/realtime/worker";
-export { RealtimeDurableObject } from "@redwoodjs/sdk/realtime/durableObject";
+import { realtimeRoute } from "rwsdk/realtime/worker";
+export { RealtimeDurableObject } from "rwsdk/realtime/durableObject";
 
 import { Document } from "@/app/Document";
 

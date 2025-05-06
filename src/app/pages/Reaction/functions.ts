@@ -1,7 +1,7 @@
 "use server";
 
 import { env } from "cloudflare:workers";
-import { renderRealtimeClients } from "@redwoodjs/sdk/realtime/worker";
+import { renderRealtimeClients } from "rwsdk/realtime/worker";
 
 export let REACTIONS = ["🤦‍♂️"];
 

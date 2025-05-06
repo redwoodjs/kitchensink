@@ -1,4 +1,4 @@
-import { initRealtimeClient } from "@redwoodjs/sdk/realtime/client";
+import { initRealtimeClient } from "rwsdk/realtime/client";
 
 initRealtimeClient({
   key: "redwood-realtime-client-key",
