@@ -3,7 +3,9 @@
   "name": "kitchensink",
   "main": "src/worker.tsx",
   "compatibility_date": "2024-09-23",
-  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
   "assets": {
     "binding": "ASSETS"
   },
@@ -28,14 +30,17 @@
   "migrations": [
     {
       "tag": "v1",
-      "new_sqlite_classes": ["SessionDurableObject", "RealtimeDurableObject"]
+      "new_sqlite_classes": [
+        "SessionDurableObject",
+        "RealtimeDurableObject"
+      ]
     }
   ],
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "kitchensink-recent-leopon",
-      "database_id": "8c116974-bfc3-4c42-99c3-dc1ad90db114"
+      "database_name": "kitchensink-revolutionary-caribou",
+      "database_id": "4ec9f328-fcd1-4bc3-9192-2392fea9640b"
     }
   ]
 }
