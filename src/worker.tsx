@@ -1,11 +1,8 @@
-import { defineApp, ErrorResponse } from "rwsdk/worker";
-import { route, render, prefix } from "rwsdk/router";
+import { defineApp } from "rwsdk/worker";
+import { route, render } from "rwsdk/router";
 import { env } from "cloudflare:workers";
 
-import { setCommonHeaders } from "@/app/headers";
-// import { Session } from "./session/durableObject";
 import { setupDb } from "./db";
-// import type { User } from "@prisma/client";
 export { SessionDurableObject } from "./session/durableObject";
 
 import { realtimeRoute } from "rwsdk/realtime/worker";
@@ -19,11 +16,12 @@ import { ReactionAdminPage } from "./app/pages/Reaction/ReactionAdminPage";
 export type AppContext = {};
 
 export default defineApp([
-  async ({ ctx }) => {
+  // Middlware
+  async () => {
     await setupDb(env);
   },
+  // Route handlers
   realtimeRoute(() => env.REALTIME_DURABLE_OBJECT),
-
   render(Document, [
     route("/", ReactionPage),
     route("/admin", ReactionAdminPage),

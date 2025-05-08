@@ -1,6 +1,3 @@
-import { initRealtimeClient } from "rwsdk/realtime/client";
+import { initClient } from "rwsdk/client";
 
-initRealtimeClient({
-  key: "redwood-realtime-client-key",
-});
-console.log("Realtime Client Initialized.");
+initClient();
