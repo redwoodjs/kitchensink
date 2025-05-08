@@ -4,7 +4,7 @@ import { getReactions } from "./functions";
 
 export function ReactionPage() {
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-screen overflow-hidden">
       <div className="flex-1 text-4xl flex items-center justify-center relative">
         {getReactions().map((emoji, index) => {
           // Use index as part of the calculation for consistent positioning
