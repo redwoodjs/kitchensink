@@ -1,11 +1,9 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "kitchensink",
+  "name": "kitchensink-test-nonce-pr",
   "main": "src/worker.tsx",
   "compatibility_date": "2024-09-23",
-  "compatibility_flags": [
-    "nodejs_compat"
-  ],
+  "compatibility_flags": ["nodejs_compat"],
   "assets": {
     "binding": "ASSETS"
   },
@@ -30,17 +28,14 @@
   "migrations": [
     {
       "tag": "v1",
-      "new_sqlite_classes": [
-        "SessionDurableObject",
-        "RealtimeDurableObject"
-      ]
+      "new_sqlite_classes": ["SessionDurableObject", "RealtimeDurableObject"]
     }
   ],
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "kitchensink-revolutionary-caribou",
-      "database_id": "4ec9f328-fcd1-4bc3-9192-2392fea9640b"
+      "database_name": "__change_me__",
+      "database_id": "__change_me__"
     }
   ]
 }
