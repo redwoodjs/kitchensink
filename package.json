@@ -29,7 +29,7 @@
   "dependencies": {
     "@prisma/adapter-d1": "^6.4.1",
     "@prisma/client": "^6.4.1",
-    "rwsdk": "0.0.80",
+    "rwsdk": "0.0.81-test.20250508204409",
     "@simplewebauthn/browser": "^13.1.0",
     "@simplewebauthn/server": "^13.1.1",
     "@tailwindcss/vite": "^4.1.2",
@@ -43,6 +43,9 @@
     "typescript": "^5.8.3",
     "vite": "^6.1.0",
     "wrangler": "^4.14.1"
+  },
+  "resolutions": {
+    "rsc-html-stream": "file:vendor/pkg/rsc-html-stream-0.0.5-test-nonce.1.tgz"
   },
   "packageManager": "pnpm@9.14.4+sha512.c8180b3fbe4e4bca02c94234717896b5529740a6cbadf19fa78254270403ea2f27d4e1d46a08a0f56c89b63dc8ebfd3ee53326da720273794e6200fcf0d184ab"
 }
