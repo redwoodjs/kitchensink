@@ -1,5 +1,5 @@
 import { defineApp } from "rwsdk/worker";
-import { route, render } from "rwsdk/router";
+import { route, render, prefix } from "rwsdk/router";
 import { env } from "cloudflare:workers";
 
 import { setupDb } from "./db";
@@ -12,6 +12,8 @@ import { Document } from "@/app/Document";
 
 import { ReactionPage } from "@/app/pages/Reaction/ReactionPage";
 import { ReactionAdminPage } from "./app/pages/Reaction/ReactionAdminPage";
+
+import { routes as spaRoutes } from "./app/pages/spa/routes";
 
 export type AppContext = {};
 
@@ -26,4 +28,6 @@ export default defineApp([
     route("/", ReactionPage),
     route("/admin", ReactionAdminPage),
   ]),
+
+  prefix("/spa", spaRoutes),
 ]);

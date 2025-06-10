@@ -29,11 +29,18 @@
   "dependencies": {
     "@prisma/adapter-d1": "^6.4.1",
     "@prisma/client": "^6.4.1",
-    "rwsdk": "0.1.0-alpha.5",
+    "@redwoodjs/starter-standard": "link:",
     "@simplewebauthn/browser": "^13.1.0",
     "@simplewebauthn/server": "^13.1.1",
     "@tailwindcss/vite": "^4.1.2",
+    "rwsdk": "0.1.0-alpha.2",
     "tailwindcss": "^4.1.2"
+  },
+  "pnpm": {
+    "overrides": {
+      "react": "0.0.0-experimental-b6c0aa88-20250609",
+      "react-dom": "0.0.0-experimental-b6c0aa88-20250609"
+    }
   },
   "devDependencies": {
     "@types/node": "^22.13.11",

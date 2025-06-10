@@ -4,6 +4,10 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  react: 0.0.0-experimental-b6c0aa88-20250609
+  react-dom: 0.0.0-experimental-b6c0aa88-20250609
+
 importers:
 
   .:
@@ -14,6 +18,9 @@ importers:
       '@prisma/client':
         specifier: ^6.4.1
         version: 6.5.0(prisma@6.5.0(typescript@5.8.3))(typescript@5.8.3)
+      '@redwoodjs/starter-standard':
+        specifier: 'link:'
+        version: 'link:'
       '@simplewebauthn/browser':
         specifier: ^13.1.0
         version: 13.1.0
@@ -24,8 +31,8 @@ importers:
         specifier: ^4.1.2
         version: 4.1.2(vite@6.2.4(@types/node@22.14.0)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))
       rwsdk:
-        specifier: 0.1.0-alpha.5
-        version: 0.1.0-alpha.5(rollup@4.39.0)(typescript@5.8.3)(vite@6.2.4(@types/node@22.14.0)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(webpack@5.98.0(esbuild@0.25.2))(workerd@1.20250525.0)
+        specifier: 0.1.0-alpha.2
+        version: 0.1.0-alpha.2(rollup@4.39.0)(typescript@5.8.3)(vite@6.2.4(@types/node@22.14.0)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(webpack@5.98.0(esbuild@0.25.2))(workerd@1.20250525.0)
       tailwindcss:
         specifier: ^4.1.2
         version: 4.1.2
@@ -1947,10 +1954,10 @@ packages:
   randombytes@2.1.0:
     resolution: {integrity: sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ==}
 
-  react-dom@19.2.0-canary-39cad7af-20250411:
-    resolution: {integrity: sha512-O9GNnsgW8BtodVQ8kQxUs3y6sy2LwzCLrVfMTgPWSCVmIMj7sb9Pgc9y4Tmzmzj/iaFeNNuZXbiLFsHvhslYww==}
+  react-dom@0.0.0-experimental-b6c0aa88-20250609:
+    resolution: {integrity: sha512-GDu0w3Gt1fLufIm7OIUy++FcKK6zrFv1sQtl5r2s+nfDk3F5stDlCXcPQ0oDbMUazrMOAPe5TShU12ZcaBYTEA==}
     peerDependencies:
-      react: 19.2.0-canary-39cad7af-20250411
+      react: 0.0.0-experimental-b6c0aa88-20250609
 
   react-is@19.1.0:
     resolution: {integrity: sha512-Oe56aUPnkHyyDxxkvqtd7KkdQP5uIUfHxd5XTb3wE9d/kRnZLmKbDB0GWk919tdQ+mxxPtG6EAs6RMT6i1qtHg==}
@@ -1963,12 +1970,12 @@ packages:
     resolution: {integrity: sha512-B6TOkq4VA+p1rsPsElTCwLEwWe5T+eseoXVzYKR1COR2R2TNjO2bQb+52tr5ZJ76mXnZc18wpUdafp1+Zb6piw==}
     engines: {node: '>=0.10.0'}
     peerDependencies:
-      react: 19.2.0-canary-39cad7af-20250411
-      react-dom: 19.2.0-canary-39cad7af-20250411
+      react: 0.0.0-experimental-b6c0aa88-20250609
+      react-dom: 0.0.0-experimental-b6c0aa88-20250609
       webpack: ^5.59.0
 
-  react@19.2.0-canary-39cad7af-20250411:
-    resolution: {integrity: sha512-F6Iiuc7rXFtMZpCYM7rjJUSc8ee2xJV2+1s47xYR29U7e3Z5ztSplpEy559zeTEol1nHIxNTRvyFwVjmyEXnUA==}
+  react@0.0.0-experimental-b6c0aa88-20250609:
+    resolution: {integrity: sha512-82qiSxrJR/v6FXFlFPVPDzHlnc8Pu/4BDAv/f+hM25Jaqw6JAm5W6NlYVNsO9iieOUySYxkZ9GP3q5ycP2f+Lg==}
     engines: {node: '>=0.10.0'}
 
   require-directory@2.1.1:
@@ -1997,8 +2004,8 @@ packages:
   run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
 
-  rwsdk@0.1.0-alpha.5:
-    resolution: {integrity: sha512-v4VmaPb442daDi9pPeNGSJNxj+ao8v4w2KA6kJ36WPJA0AVVQEH80veTuV76q+NN5PAfvpqG/Ip7p01GzlWJnw==}
+  rwsdk@0.1.0-alpha.2:
+    resolution: {integrity: sha512-myTTxPCJi/zYH2V/mO151b3aogc3rqvKzUqaC8Gs41AAJR+XFsZScv9pRfasxd1oPML8Mt97ui+c0g8EVRcR2A==}
     hasBin: true
     peerDependencies:
       vite: ^6.2.6
@@ -2006,8 +2013,8 @@ packages:
   safe-buffer@5.2.1:
     resolution: {integrity: sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==}
 
-  scheduler@0.27.0-canary-39cad7af-20250411:
-    resolution: {integrity: sha512-u+r6WyKk4zmirtBMZP8QZx0sTptiRxMMbGjf/3nOunE0mNnmkGFDcsG2UVDuOb5CyxvfbxgWE6W5JIyzTN4FXQ==}
+  scheduler@0.0.0-experimental-b6c0aa88-20250609:
+    resolution: {integrity: sha512-T0v5b16WYHeKNiejV68wVt47SOjQjFvXXKSPoG6ZCHuvwnXs0MdEHNiXxssnCeARpbX0/xkNo/UAdT9IS29A2Q==}
 
   schema-utils@4.3.0:
     resolution: {integrity: sha512-Gf9qqc58SpCA/xdziiHz35F4GNIWYWZrEshUc/G/r5BnLph6xpKuLeoJoQuj5WfBIx/eQLf+hmVPYHaxJu7V2g==}
@@ -4157,25 +4164,25 @@ snapshots:
     dependencies:
       safe-buffer: 5.2.1
 
-  react-dom@19.2.0-canary-39cad7af-20250411(react@19.2.0-canary-39cad7af-20250411):
+  react-dom@0.0.0-experimental-b6c0aa88-20250609(react@0.0.0-experimental-b6c0aa88-20250609):
     dependencies:
-      react: 19.2.0-canary-39cad7af-20250411
-      scheduler: 0.27.0-canary-39cad7af-20250411
+      react: 0.0.0-experimental-b6c0aa88-20250609
+      scheduler: 0.0.0-experimental-b6c0aa88-20250609
 
   react-is@19.1.0: {}
 
   react-refresh@0.14.2: {}
 
-  react-server-dom-webpack@19.2.0-canary-39cad7af-20250411(react-dom@19.2.0-canary-39cad7af-20250411(react@19.2.0-canary-39cad7af-20250411))(react@19.2.0-canary-39cad7af-20250411)(webpack@5.98.0(esbuild@0.25.2)):
+  react-server-dom-webpack@19.2.0-canary-39cad7af-20250411(react-dom@0.0.0-experimental-b6c0aa88-20250609(react@0.0.0-experimental-b6c0aa88-20250609))(react@0.0.0-experimental-b6c0aa88-20250609)(webpack@5.98.0(esbuild@0.25.2)):
     dependencies:
       acorn-loose: 8.4.0
       neo-async: 2.6.2
-      react: 19.2.0-canary-39cad7af-20250411
-      react-dom: 19.2.0-canary-39cad7af-20250411(react@19.2.0-canary-39cad7af-20250411)
+      react: 0.0.0-experimental-b6c0aa88-20250609
+      react-dom: 0.0.0-experimental-b6c0aa88-20250609(react@0.0.0-experimental-b6c0aa88-20250609)
       webpack: 5.98.0(esbuild@0.25.2)
       webpack-sources: 3.2.3
 
-  react@19.2.0-canary-39cad7af-20250411: {}
+  react@0.0.0-experimental-b6c0aa88-20250609: {}
 
   require-directory@2.1.1: {}
 
@@ -4218,7 +4225,7 @@ snapshots:
     dependencies:
       queue-microtask: 1.2.3
 
-  rwsdk@0.1.0-alpha.5(rollup@4.39.0)(typescript@5.8.3)(vite@6.2.4(@types/node@22.14.0)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(webpack@5.98.0(esbuild@0.25.2))(workerd@1.20250525.0):
+  rwsdk@0.1.0-alpha.2(rollup@4.39.0)(typescript@5.8.3)(vite@6.2.4(@types/node@22.14.0)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(webpack@5.98.0(esbuild@0.25.2))(workerd@1.20250525.0):
     dependencies:
       '@cloudflare/vite-plugin': 0.0.0-1bae8618b(rollup@4.39.0)(vite@6.2.4(@types/node@22.14.0)(jiti@2.4.2)(lightningcss@1.29.2)(terser@5.39.0)(tsx@4.19.3)(yaml@2.7.1))(workerd@1.20250525.0)(wrangler@4.19.1(@cloudflare/workers-types@4.20250408.0))
       '@cloudflare/workers-types': 4.20250408.0
@@ -4241,10 +4248,10 @@ snapshots:
       miniflare: 4.20250525.1
       picocolors: 1.1.1
       puppeteer-core: 22.15.0
-      react: 19.2.0-canary-39cad7af-20250411
-      react-dom: 19.2.0-canary-39cad7af-20250411(react@19.2.0-canary-39cad7af-20250411)
+      react: 0.0.0-experimental-b6c0aa88-20250609
+      react-dom: 0.0.0-experimental-b6c0aa88-20250609(react@0.0.0-experimental-b6c0aa88-20250609)
       react-is: 19.1.0
-      react-server-dom-webpack: 19.2.0-canary-39cad7af-20250411(react-dom@19.2.0-canary-39cad7af-20250411(react@19.2.0-canary-39cad7af-20250411))(react@19.2.0-canary-39cad7af-20250411)(webpack@5.98.0(esbuild@0.25.2))
+      react-server-dom-webpack: 19.2.0-canary-39cad7af-20250411(react-dom@0.0.0-experimental-b6c0aa88-20250609(react@0.0.0-experimental-b6c0aa88-20250609))(react@0.0.0-experimental-b6c0aa88-20250609)(webpack@5.98.0(esbuild@0.25.2))
       rsc-html-stream: 0.0.6
       tmp-promise: 3.0.3
       ts-morph: 25.0.1
@@ -4265,7 +4272,7 @@ snapshots:
 
   safe-buffer@5.2.1: {}
 
-  scheduler@0.27.0-canary-39cad7af-20250411: {}
+  scheduler@0.0.0-experimental-b6c0aa88-20250609: {}
 
   schema-utils@4.3.0:
     dependencies:
