@@ -12,8 +12,10 @@ import { Document } from "@/app/Document";
 
 import { ReactionPage } from "@/app/pages/Reaction/ReactionPage";
 import { ReactionAdminPage } from "./app/pages/Reaction/ReactionAdminPage";
+import { HomePage } from "@/app/pages/Home";
 
 import { routes as spaRoutes } from "./app/pages/spa/routes";
+import { ClientSideNavigationDocument } from "./app/pages/spa/ClientSideNavigationDocument";
 
 export type AppContext = {};
 
@@ -24,10 +26,8 @@ export default defineApp([
   },
   // Route handlers
   realtimeRoute(() => env.REALTIME_DURABLE_OBJECT),
-  render(Document, [
-    route("/", ReactionPage),
-    route("/admin", ReactionAdminPage),
-  ]),
 
-  prefix("/spa", spaRoutes),
+  render(Document, [route("/", HomePage)]),
+
+  prefix("/routing/spa", spaRoutes),
 ]);
