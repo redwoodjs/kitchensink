@@ -1,10 +1,20 @@
 import { route, render, layout } from "rwsdk/router";
-import { SpaDocument } from "./spaDocument";
+import { ClientSideNavigationDocument } from "./ClientSideNavigationDocument";
 import { ViewTransitionLayout } from "./Layout";
+import { MyComponent } from "./MyComponent";
+import { ClientComponent } from "../ClientC";
 
 export const routes = [
-  render(SpaDocument, [
+  render(ClientSideNavigationDocument, [
     layout(ViewTransitionLayout, [
+      route("/", () => {
+        return (
+          <div>
+            xxxxxxxxxx
+            <ClientComponent />
+          </div>
+        );
+      }),
       route("/page-1", () => (
         <div>
           <title>Page 1</title>
