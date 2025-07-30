@@ -11,9 +11,8 @@ export { RealtimeDurableObject } from "rwsdk/realtime/durableObject";
 import { Document } from "@/app/Document";
 
 import { ReactionPage } from "@/app/pages/Reaction/ReactionPage";
-import { ReactionAdminPage } from "./app/pages/Reaction/ReactionAdminPage";
 
-import { routes as spaRoutes } from "./app/pages/spa/routes";
+import { routes as navRoutes } from "./app/pages/nav/routes";
 
 export type AppContext = {};
 
@@ -25,9 +24,19 @@ export default defineApp([
   // Route handlers
   realtimeRoute(() => env.REALTIME_DURABLE_OBJECT),
   render(Document, [
-    route("/", ReactionPage),
-    route("/admin", ReactionAdminPage),
+    route("/", () => {
+      return (
+        <ol>
+          <li>
+            <a href="/realtime">realtime</a>
+          </li>
+          <li>
+            <a href="/nav">nav</a>
+          </li>
+        </ol>
+      );
+    }),
+    route("/realtime", ReactionPage),
+    prefix("/nav", navRoutes),
   ]),
-
-  prefix("/spa", spaRoutes),
 ]);

@@ -27,28 +27,23 @@
     "types": "pnpm tsc"
   },
   "dependencies": {
-    "@prisma/adapter-d1": "^6.12.0",
-    "@prisma/client": "^6.12.0",
+    "@prisma/adapter-d1": "^6.13.0",
+    "@prisma/client": "^6.13.0",
     "@simplewebauthn/browser": "^13.1.2",
     "@simplewebauthn/server": "^13.1.2",
     "@tailwindcss/vite": "^4.1.11",
-    "rwsdk": "^0.1.17",
+    "rwsdk": "^0.1.27",
     "tailwindcss": "^4.1.11"
   },
-  "pnpm": {
-    "overrides": {
-      "react": "0.0.0-experimental-b6c0aa88-20250609",
-      "react-dom": "0.0.0-experimental-b6c0aa88-20250609"
-    }
-  },
   "devDependencies": {
-    "@types/node": "^22.16.4",
-    "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
-    "prisma": "^6.12.0",
+    "@types/node": "^22.17.0",
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7",
+    "prisma": "^6.13.0",
     "typescript": "^5.8.3",
     "vite": "^6.3.5",
-    "wrangler": "^4.24.3"
+    "wrangler": "^4.26.1",
+    "@cloudflare/vite-plugin": "^1.10.2"
   },
   "packageManager": "pnpm@9.14.4+sha512.c8180b3fbe4e4bca02c94234717896b5529740a6cbadf19fa78254270403ea2f27d4e1d46a08a0f56c89b63dc8ebfd3ee53326da720273794e6200fcf0d184ab"
 }
