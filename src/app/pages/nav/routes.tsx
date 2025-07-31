@@ -1,23 +1,35 @@
 import { route, layout } from "rwsdk/router";
 
+import { renderToStream } from "rwsdk/worker";
+
 import { ViewTransitionLayout } from "./Layout";
+import { Document } from "@/app/Document";
+
+const pause = () => {
+  return new Promise((resolve) => {
+    setTimeout(resolve, 1000);
+  });
+};
 
 export const routes = [
   layout(ViewTransitionLayout, [
-    route("/", () => (
-      <div>
-        <h1 className="text-2xl font-bold">Nav</h1>
-      </div>
-    )),
+    route(
+      "/",
+      () =>
+        new Response(null, {
+          status: 302,
+          headers: { location: "/nav/page-1" },
+        })
+    ),
     route("/page-1", () => (
       <div>
         <title>Page 1</title>
         <h1 className="text-2xl font-bold">Page 1</h1>
         goto{" "}
-        <a href="/spa/page-2" className="text-blue-500 underline">
-          Page 2
+        <a href="/nav/page-2" className="text-blue-500 underline">
+          Goto: Page 2
         </a>
-        <div className="bg-orange-500 p-5">Hello</div>
+        <div className="bg-orange-500 p-5 w-2xl">Hello</div>
       </div>
     )),
     route("/page-2", () => (
@@ -25,11 +37,24 @@ export const routes = [
         <title>Page 2</title>
         <h1 className="text-2xl font-bold">Page 2</h1>
         goto{" "}
-        <a href="/spa/page-1" className="text-blue-500 underline">
-          Page 1
+        <a href="/nav/page-1" className="text-blue-500 underline">
+          Goto: Page 1
         </a>
         <div className="bg-green-500 p-5">World</div>
       </div>
     )),
   ]),
+  route("/*", () => {
+    // await pause();
+    const stream = renderToStream(
+      <div className="flex flex-col items-center justify-center h-screen">
+        <h1 className="text-4xl font-bold">404</h1>
+        <p className="text-2xl">Page not found</p>
+      </div>
+    );
+    return new Response("not found", {
+      status: 404,
+      headers: { "Content-Type": "text/html" },
+    });
+  }),
 ];

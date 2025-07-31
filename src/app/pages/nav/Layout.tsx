@@ -1,14 +1,39 @@
 import { LayoutProps } from "rwsdk/router";
-import { ToggleNavigationModes } from "./components/ToggleNavigationModes";
+import { ToggleNavigationModes } from "@/app/components/ToggleNavigationModes";
 
 export const ViewTransitionLayout = ({ children }: LayoutProps) => {
   return (
     <div className="p-5">
-      <div className="bg-amber-200 mb-2">
+      <div className="mb-2 flex items-center gap-2">
         <img src="https://media.tenor.com/SB66UNkGc0gAAAAM/sloth-slow.gif" />
+        <marquee>
+          <h1 className="text-4xl font-bold">The sloth is slow.</h1>
+
+          <div className="text-sm text-gray-500">
+            If this marquee's animation does not "restart" on navigation, you're
+            using client side navigation. Only the content that changes will
+            reload.
+          </div>
+        </marquee>
       </div>
-      <h1 className="text-2xl font-bold">Navigation Examples</h1>
-      <ToggleNavigationModes />
+
+      <div className="mb-2 w-2/3 mx-auto">
+        <ToggleNavigationModes />
+      </div>
+
+      <br />
+      <div className="flex flex-row gap-2 justify-center">
+        <a href="/nav/page-1" className="text-blue-500">
+          Page 1
+        </a>
+        <a href="/nav/page-2" className="text-blue-500">
+          Page 2
+        </a>
+        <a href="/nav/page-3" className="text-blue-500">
+          Page 3 (404)
+        </a>
+      </div>
+
       {children}
     </div>
   );
