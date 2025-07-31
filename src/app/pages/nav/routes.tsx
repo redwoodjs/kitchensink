@@ -5,12 +5,6 @@ import { renderToStream } from "rwsdk/worker";
 import { ViewTransitionLayout } from "./Layout";
 import { Document } from "@/app/Document";
 
-const pause = () => {
-  return new Promise((resolve) => {
-    setTimeout(resolve, 1000);
-  });
-};
-
 export const routes = [
   layout(ViewTransitionLayout, [
     route(
@@ -44,15 +38,15 @@ export const routes = [
       </div>
     )),
   ]),
-  route("/*", () => {
-    // await pause();
-    const stream = renderToStream(
+  route("/*", async () => {
+    const stream = await renderToStream(
       <div className="flex flex-col items-center justify-center h-screen">
         <h1 className="text-4xl font-bold">404</h1>
         <p className="text-2xl">Page not found</p>
-      </div>
+      </div>,
+      { Document }
     );
-    return new Response("not found", {
+    return new Response(stream, {
       status: 404,
       headers: { "Content-Type": "text/html" },
     });

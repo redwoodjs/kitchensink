@@ -21,7 +21,7 @@ if (networkTransport === "realtime") {
     handleResponse: (response) => {
       console.log("handleResponse", response);
       console.log(response.ok);
-      return handleResponse(response);
+      return handleResponse?.(response) ?? false;
     },
   });
 }
