@@ -4,6 +4,7 @@ import { renderToStream } from "rwsdk/worker";
 
 import { ViewTransitionLayout } from "./Layout";
 import { Document } from "@/app/Document";
+import { PageLinks } from "@/app/components/PageLinks";
 
 export const routes = [
   layout(ViewTransitionLayout, [
@@ -40,7 +41,8 @@ export const routes = [
   ]),
   route("/*", async () => {
     const stream = await renderToStream(
-      <div className="flex flex-col items-center justify-center h-screen">
+      <div className="flex flex-col items-center justify-center min-h-[25vh]">
+        <PageLinks />
         <h1 className="text-4xl font-bold">404</h1>
         <p className="text-2xl">Page not found</p>
       </div>,
