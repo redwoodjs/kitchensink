@@ -1,27 +1,39 @@
-import { initClient, initClientNavigation } from "rwsdk/client";
-import { initRealtimeClient } from "rwsdk/realtime/client";
+(async () => {
+  const networkTransport =
+    window.localStorage.getItem("networkTransport") || "fetch";
+  const navigationMode =
+    window.localStorage.getItem("navigationMode") || "server";
 
-const networkTransport =
-  window.localStorage.getItem("networkTransport") || "fetch";
+  let handleResponse: ((response: Response) => boolean) | undefined = undefined;
 
-let handleResponse = undefined;
-const navigationMode =
-  window.localStorage.getItem("navigationMode") || "server";
-if (navigationMode === "client") {
-  console.log("initializing client navigation");
-  const nav = initClientNavigation();
-  handleResponse = nav.handleResponse;
-}
+  if (networkTransport === "realtime") {
+    console.log("initializing realtime client");
+    const { initRealtimeClient } = await import("rwsdk/realtime/client");
 
-if (networkTransport === "realtime") {
-  console.log("initializing realtime client");
-  initRealtimeClient({ key: window.location.href, handleResponse });
-} else {
-  initClient({
-    handleResponse: (response) => {
-      console.log("handleResponse", response);
-      console.log(response.ok);
-      return handleResponse?.(response) ?? false;
-    },
-  });
-}
+    if (navigationMode === "client") {
+      console.log("initializing client navigation for realtime");
+      const { initClientNavigation } = await import("rwsdk/client");
+      const nav = initClientNavigation();
+      handleResponse = nav.handleResponse;
+    }
+
+    initRealtimeClient({ handleResponse });
+  } else {
+    // fetch
+    const rwsdkClient = await import("rwsdk/client");
+
+    if (navigationMode === "client") {
+      console.log("initializing client navigation for fetch");
+      const nav = rwsdkClient.initClientNavigation();
+      handleResponse = nav.handleResponse;
+    }
+
+    rwsdkClient.initClient({
+      handleResponse: (response) => {
+        console.log("handleResponse", response);
+        console.log(response.ok);
+        return handleResponse?.(response) ?? false;
+      },
+    });
+  }
+})();
