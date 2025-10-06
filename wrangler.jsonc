@@ -2,10 +2,8 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "kitchensink",
   "main": "src/worker.tsx",
-  "compatibility_date": "2024-09-23",
-  "compatibility_flags": [
-    "nodejs_compat"
-  ],
+  "compatibility_date": "2025-08-21",
+  "compatibility_flags": ["nodejs_compat"],
   "assets": {
     "binding": "ASSETS"
   },
@@ -30,10 +28,7 @@
   "migrations": [
     {
       "tag": "v1",
-      "new_sqlite_classes": [
-        "SessionDurableObject",
-        "RealtimeDurableObject"
-      ]
+      "new_sqlite_classes": ["SessionDurableObject", "RealtimeDurableObject"]
     }
   ],
   "d1_databases": [

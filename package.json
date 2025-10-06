@@ -32,18 +32,22 @@
     "@simplewebauthn/browser": "^13.1.2",
     "@simplewebauthn/server": "^13.1.2",
     "@tailwindcss/vite": "^4.1.11",
-    "rwsdk": "^0.1.28",
-    "tailwindcss": "^4.1.11"
+    "rwsdk": "^1.0.0-beta.9",
+    "tailwindcss": "^4.1.11",
+    "react": "next",
+    "react-dom": "next",
+    "react-server-dom-webpack": "next"
   },
   "devDependencies": {
+    "@cloudflare/vite-plugin": "latest",
+    "@cloudflare/workers-types": "latest",
     "@types/node": "^22.17.0",
     "@types/react": "^19.1.9",
     "@types/react-dom": "^19.1.7",
     "prisma": "^6.13.0",
     "typescript": "^5.8.3",
     "vite": "^6.3.5",
-    "wrangler": "^4.26.1",
-    "@cloudflare/vite-plugin": "^1.10.2"
+    "wrangler": "latest"
   },
   "packageManager": "pnpm@9.14.4+sha512.c8180b3fbe4e4bca02c94234717896b5529740a6cbadf19fa78254270403ea2f27d4e1d46a08a0f56c89b63dc8ebfd3ee53326da720273794e6200fcf0d184ab"
 }

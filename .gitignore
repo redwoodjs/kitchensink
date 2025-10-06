@@ -63,3 +63,5 @@ coverage
 # Temporary files
 *.tmp
 *.temp
+# Cursor User Rules
+.cursor/rules/user
